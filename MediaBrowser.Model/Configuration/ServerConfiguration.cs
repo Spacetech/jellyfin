@@ -276,6 +276,15 @@ namespace MediaBrowser.Model.Configuration
         /// </summary>
         public int? ActivityLogRetentionDays { get; set; }
 
+        /// Gets or sets the how the library scan fans out.
+        /// </summary>
+        public int LibraryScanFanoutConcurrency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the how many metadata refreshes can run concurrently.
+        /// </summary>
+        public int LibraryMetadataRefreshConcurrency { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerConfiguration" /> class.
         /// </summary>
@@ -387,6 +396,8 @@ namespace MediaBrowser.Model.Configuration
             CorsHosts = new[] { "*" };
             KnownProxies = Array.Empty<string>();
             ActivityLogRetentionDays = 30;
+            LibraryScanFanoutConcurrency = 0;
+            LibraryMetadataRefreshConcurrency = 0;
         }
     }
 
